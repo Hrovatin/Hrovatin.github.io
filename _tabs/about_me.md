@@ -25,6 +25,8 @@ Among my favourite work-sessions during my PhD
 was the chance to describe my battles with `matplotlib` and how I survived them
 in this 
 [tutorial](https://scanpy.readthedocs.io/en/stable/tutorials/plotting/advanced.html).
+Since I had written the first draft, others have also improved this tutorial. 
+
 
 Besides that, figuring out with my colleagues
 how to make concept figures that save the reader 

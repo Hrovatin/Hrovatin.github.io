@@ -74,7 +74,7 @@ analytics:
   fathom:
     id: # fill in your Fathom Site ID
 
-## Page views settings
+# Page views settings
 pageviews:
   provider: # now only supports 'goatcounter'
 
@@ -213,8 +213,8 @@ exclude:
   - tools
   - README.md
   - LICENSE
-  - "*.config.js"
-  - package*.json
+  - "*.js"
+  - "package*.json"
 
 jekyll-archives:
   enabled: [categories, tags]
@@ -227,3 +227,4 @@ jekyll-archives:
 
 # Reload upon changes
 livereload: true
+

@@ -53,3 +53,16 @@ is the preferred communication channel.
 While I have accounts on some other platforms, 
 such as Twitter, I do not regularly use them and will likely miss any 
 messages there.
+
+## Acknowledgements
+
+I am grateful to past support from Joachim Herz Stiftung via 
+Add-on Fellowships for Interdisciplinary Life Science that sponsored some 
+of my drawing tools, necessary for the illustrations.
+
+## Disclaimers
+
+Some of my graphic are designed with the help of AI Generate Vectors tool. 
+All graphics were hitherto manually adjusted.
+
+

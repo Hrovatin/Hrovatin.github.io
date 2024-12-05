@@ -3,7 +3,11 @@
 The content of the blog posts is under
 [modified CC BY 4.0 license](https://github.com/Hrovatin/Hrovatin.github.io/tree/main/_tabs/license.md).
 
-## Copy of licence for Jekyll theme Chirpy
+## Copy of the licence for the Jekyll theme Chirpy
+
+This website uses Chirpy theme, of which I am not the author. 
+
+It is under the MIT License (copied below).
 
 MIT License
 

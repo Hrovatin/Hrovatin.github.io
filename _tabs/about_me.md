@@ -43,6 +43,7 @@ first probe the industry world by joining an already established company.
 And of course: I enjoy participating in **scientific communication**. - 
 As you may have deduced from the existence of this blog. 
 However, my interest is broader than just this blog, although I never have
-enough time to do everything. For example, I must admit that I am one of those *special* people
+enough time to do everything. For example, 
+I must admit that I am one of those *special* people
 who actually *enjoys* presenting their work to others.
 

@@ -9,3 +9,21 @@ image:
   path: stormy_sea_preview.png
   alt: <b>A fight against ambient expression.</b><br>On a stormy sea "of ambient gene expression" a scientist is bailing out water (ambient expression) from his sinking boat (sequencing droplet containing a cell).
 ---
+
+![Desktop View](ambient_expression.jpg){: width="800" alt="abc" .shadow;}
+_<b>Figure 1:</b> text_
+
+![Desktop View](ambient_correction.jpg){: width="450" alt="abc" .shadow;}
+_<b>Figure 2:</b> text_
+
+![Desktop View](ambient_variation.jpg){: width="350" alt="abc" .shadow;}
+_<b>Figure 3:</b> text_
+
+![Desktop View](within_between_batch.jpg){: width="400" alt="abc" .shadow;}
+_<b>Figure 4:</b> text_
+
+![Desktop View](estimated_contamination.jpg){: width="400" alt="abc" .shadow;}
+_<b>Figure 5:</b> text_
+
+![Desktop View](relative_expr.jpg){: width="600" alt="abc" .shadow;}
+_<b>Figure 6:</b> text_

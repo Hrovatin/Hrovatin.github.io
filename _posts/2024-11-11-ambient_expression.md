@@ -34,18 +34,43 @@ but rather as something to ponder over._
 The first few sections introduce ambient expression and its relevance 
 for different data analysis applications. If you are already very familiar 
 with ambient expression and scRNA-seq data, you can skip most of the 
-early sections with <strong style="color:#0c739c;">blue</strong> titles 
+early sections with <strong style="color:#c96f00;">orange</strong> titles 
 and instead focus on sub-sections with <strong>black</strong> 
 titles, where I discuss my observations.
 </div>
 
-## <span style="color:#0c739c;">What is ambient expression?</span>
+## <span style="color:#c96f00;">What is ambient expression?</span>
+
+It is important to understand the general characteristics of AGE (**Figure 1**) 
+as they are used as inductive biases in AGE correction approaches. 
+
+<details open>
+<summary>Brief introduction of scRNA-seq</summary>
+<div style="border:1px solid #535353;border-radius: 7px;padding: 10px;margin: 5px;">
+To measure the molecular characteristics of individual cells, 
+the activity of each gene (e.g. “template” for specific molecular function) 
+is assessed based on the number of RNA molecules transcribed from each gene 
+(e.g. number of “tools” for specific molecular function) via sequencing. 
+To enable sequencing of individual cells, the cells are encapsulated in 
+lipid droplets. 
+<br><br>
+In the following text, I will use scRNA-seq terminology, which can be 
+translated to general machine-learning terms as follows: 
+<ul>
+<li> Cells and droplets are samples.</li>
+<li> Batches or sequencing samples are domains.</li>
+<li> Genes or their transcripts are features.</li>
+</ul>
+</div>
+</details>
 
 ![Desktop View](ambient_expression.jpg){: width="800" alt="abc" .shadow;}
-_<b>Figure 1:</b> text_
+_**Figure 1: Properties of ambient gene expression.**_
+
+Summary of AGE characteristics:
 
 ![Desktop View](ambient_correction.jpg){: width="450" alt="abc" .shadow;}
-_<b>Figure 2:</b> text_
+_**Figure 2: text**_
 
 ![Desktop View](ambient_variation.jpg){: width="350" alt="abc" .shadow;}
 _<b>Figure 3:</b> text_

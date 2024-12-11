@@ -128,7 +128,7 @@ about code are valuable, there are times when they do not bring much.
 In such cases, sheepishly following predefined standards is genuinely 
 the best thing to do (**Figure 3**).
 
-![Desktop View](commit_messages.jpg){: width="150" alt="Sheep coding." .shadow style="border-radius: 7px;"}
+![Desktop View](sheep_coding.jpg){: width="300" alt="Sheep coding." .shadow style="border-radius: 7px;"}
 _<b>Figure 3: Following existing standards rather than re-inventing new ones can save a lot of time for coding.</b>_
 
 A clear standard can be set by using an automated pre-commit formatting tool. 
@@ -161,7 +161,7 @@ further. We need to manually investigate what may break if we amend the pin.
 </details>
 <br>
 
-![Desktop View](sheep_coding.jpg){: width="300" alt="git bisect uses binary search to help pinpoint the commit that introduced a bug." .shadow style="border-radius: 7px;"}
+![Desktop View](git_bisect.jpg){: width="300" alt="git bisect uses binary search to help pinpoint the commit that introduced a bug." .shadow style="border-radius: 7px;"}
 _<b>Figure 4: `git bisect` helps to pinpoint the commit that introduced a bug.</b>  This is achieved with a binary search between known bug-free and bug-containing commits._
 
 To effectively manage code modifications, three rules are of special importance:
@@ -174,7 +174,7 @@ change was necessary (**Figure 5**).
 - Commits should be easily searchable. Thus, they must be free of spelling 
 mistakes and all contributors should follow consistent naming conventions. 
 
-![Desktop View](git_bisect.jpg){: width="300" alt="Best practices for GitHub commit messages." .shadow style="border-radius: 7px;"}
+![Desktop View](commit_messages.jpg){: width="150" alt="Best practices for GitHub commit messages." .shadow style="border-radius: 7px;"}
 _<b>Figure 5: Best practices for commit messages.</b>_
 
 Opinions on how to manage history, however, diverge. One approach is to 

@@ -26,8 +26,8 @@ which explains how the CC BY 4.0 license was modified.
 You are permitted to omit the license link from the in-text citations if 
 you provide the link within the reference list.
 
-Please note that some of the materials are from external sources and are 
-under a different license.
+Please note that some of the materials on this webpage are from external 
+sources and are under a different license.
 
  **Attribution examples**
 
@@ -51,7 +51,9 @@ appreciate it, if you at least listed my name beside my artwork.
 
 # Copy of the licence for the Jekyll theme Chirpy
 
-This website uses Chirpy theme, of which I am not the author. 
+This website uses 
+<a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank">Chirpy theme</a>, 
+of which I am not the author. 
 
 It is under the MIT License (copied below).
 

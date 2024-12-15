@@ -7,7 +7,7 @@ order: 4
 ## Biological data science
 
 My professional interests broadly revolve around **research** in 
-**biological data sciences**. 
+**biological data science**. 
 
 This includes both **understanding the data** at hand 
 and **keeping track of machine learning** developments that may be beneficial 
@@ -28,7 +28,7 @@ first probe the industry world by joining a well-established company.
 
 And of course: I enjoy participating in **scientific communication**. - 
 As you may have figured out from this blog. 
-However, my interest is broader than this blog. Yet, there is never
+While my interest is broader than this blog, there is sadly never
 enough time to do everything.
 
 ## CV

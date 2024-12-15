@@ -1,6 +1,6 @@
 ---
 title: "Saving time in open-source"
-#date: YYYY-MM-DD HH:MM:SS +/-TTTT
+date: 2024-12-15 00:01:00
 categories: [Coding]
 tags: [open source, python]     # TAG names should always be lowercase
 description: Following the trail of best practices.

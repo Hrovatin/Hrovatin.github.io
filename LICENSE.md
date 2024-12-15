@@ -5,7 +5,9 @@ The content of the blog posts is under
 
 ## Copy of the licence for the Jekyll theme Chirpy
 
-This website uses Chirpy theme, of which I am not the author. 
+This website uses 
+<a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank">Chirpy theme</a>, 
+of which I am not the author. 
 
 It is under the MIT License (copied below).
 

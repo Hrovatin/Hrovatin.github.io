@@ -8,15 +8,15 @@ Copyright (c) 2024 Karin Hrovatin
 The contents of the blog posts, including figures, are under **CC BY 4.0 license, 
 with the following additions** to the license: 
 
-- **Attribute in text**: The attribution of figures must be given directly beside 
-each figure. It should not be done only at the end of the material, 
+- **Attribute in text**: The attribution of figures and direct quotes 
+must be given directly beside 
+each figure or quote. It should not be done only at the end of the material, 
 such as in the footnotes or the acknowledgment section.
-- **Use my full name**: For in-text attribution of figures or direct quotes, 
-you must always use my full name without abbreviations (Karin Hrovatin). 
 Additional information, such as the access date and relevant URLs, 
-can be added to the reference list. When listing additional information within 
-the reference list, the reference list can use an abbreviated name, 
-as per the reference style format you use.
+can be added to the reference list.
+- **Use my full name**: For in-text attribution of figures 
+you must always add my first name or its abbreviation in addition to the 
+last name (e.g., Karin Hrovatin or K. Hrovatin). 
 - **Provide the “modified CC BY 4.0” license**: 
 When attributing the figures or direct quotes, you must always clearly specify 
 that the content is under a “modified CC BY 4.0” license. 
@@ -26,7 +26,8 @@ which explains how the CC BY 4.0 license was modified.
 You are permitted to omit the license link from the in-text citations if 
 you provide the link within the reference list.
 
-Please note that some of the materials are from external sources and are under a different license.
+Please note that some of the materials on this webpage are from external 
+sources and are under a different license.
 
  **Attribution examples**
 
@@ -48,10 +49,11 @@ as “no one will know”. Since I invested a lot of time and resources
 into this blog, especially the artwork, I would nevertheless 
 appreciate it, if you at least listed my name beside my artwork.
 
-
 # Copy of the licence for the Jekyll theme Chirpy
 
-This website uses Chirpy theme, of which I am not the author. 
+This website uses 
+<a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank">Chirpy theme</a>, 
+of which I am not the author. 
 
 It is under the MIT License (copied below).
 
@@ -74,4 +76,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-****

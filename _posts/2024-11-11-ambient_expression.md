@@ -29,9 +29,9 @@ document.addEventListener("DOMContentLoaded", function() {
 In this blog post, I will discuss the limitations of commonly used methods 
 for correcting a technical artifact known as ambient gene expression (AGE). 
 Although this artifact is specific to single-cell transcriptome sequencing 
-(scRNA-seq) data, the approaches for its modeling and mitigation share 
-considerations with artifact removal and domain adaptation in other data types. 
-Those in the single-cell field may recognize AGE a component of “batch effects”.
+(scRNA-seq) data, the approaches for its modeling and mitigation resemble
+domain correction and adaptation approaches used for other data types. 
+Those in the single-cell field may recognize AGE as a component of “batch effects”.
 
 _The limitations of the AGE correction methods discussed in this blog post are 
 largely based on my own experience. The AGE biases were one of my greatest 
@@ -102,11 +102,11 @@ Tissues contain multiple classes of cells with similar functions and gene
 expression, called cell types. However, the gene expression of two cells 
 from the same cell type will never be the same due to:
 <ul>
-<li> the noisiness of biochemical reactions 
-(i.e. probabilistic nature of gene expression), </li>
-<li> underlying biological differences, which depend on annotation 
-resolution, and </li>
-<li> technical effects. </li>
+<li> The noisiness of biochemical reactions 
+(i.e. probabilistic nature of gene expression). </li>
+<li> Underlying biological differences, which depend on cell type annotation 
+resolution. </li>
+<li> Technical effects. </li>
 </ul>
 </div>
 </details>
@@ -117,7 +117,7 @@ _**Figure 1: Properties of ambient gene expression.**_
 
 Summary of AGE characteristics:
 - **Data of each cell can be, in theory, decomposed into endogenous (true) 
-and exogenous (ambient artifact) parts.** 
+and exogenous (ambient artifact) components.** 
   - Cause of AGE: Besides the cell and its endogenous transcripts, 
   each droplet will also contain some of the liquid in which cells are 
   dispersed during sample preparation. As some of the cells burst during 
@@ -137,12 +137,14 @@ droplets.**
 - **Droplets of cells that truly express a gene will have higher counts for 
 that gene than droplets of cells that do not express that gene, 
 containing only exogenous transcripts.**
+- **Some cells have similar endogenous expressions.**
   - Joint modeling: Biologically related cells are expected to share the 
   underlying distributions from which the measured endogenous as well as 
   exogenous transcripts are sampled. Thus, gene expression characteristics 
   can be modeled jointly in similar cells. 
 - **The underlying AGE distribution can be estimated from the data.** 
-  - Reason: Some of the measured droplets will contain no cells and they can be 
+  - Empty droplets: Some of the measured droplets will contain no cells and 
+  they can be 
   identified by a low number of transcripts. The transcripts within 
   these droplets thus represent AGE within the batch.
 - **The composition of AGE strongly depends on cell type 
@@ -190,7 +192,7 @@ aspects, such as:
   (Fleming, 2023).
 
 In addition to the AGE correction tools described above, other alternatives 
-primarily focused on DE analysis are discussed in Amezquita (2021). Briefly, 
+primarily focused on DE analysis are discussed by Amezquita (2021). Briefly, 
 this includes excluding genes whose expression levels are predominately 
 affected by AGE from downstream analysis or eliminating genes whose DE is 
 likely driven by AGE. These two approaches are also further discussed below.
@@ -204,9 +206,9 @@ differently. For example:
 - Some use cases require accurate correction of individual genes, 
 such as for detecting DE genes between specific biological conditions or for 
 identifying markers of individual cell populations. On the other hand, 
-other applications require only mitigating the largest AGE differences to 
+certain applications require only mitigating the largest AGE differences to 
 reduce the biases within cell representations, such as for cell clustering or 
-classification and data integration. 
+data integration. 
 - Some analyses are performed on a per-batch level, meaning that AGE 
 correction must be truthful and comparable across cells within a batch. 
 However, many analyses include multiple batches, which means that AGE 
@@ -239,14 +241,15 @@ different AGE correction approach may be preferred.
 
 A potentially even more effective approach than removing genes 
 with the highest AGE may be removing genes with the highest variation in 
-AGE across batches (**Figure 3A**). A potential limitation of this method is 
-that it may prioritize housekeeping genes, which are present in all cell types, 
-and thus the differences in cell type proportions do not affect their AGE 
-(**Figure 3B**). However, housekeeping genes typically do not capture cell 
-heterogeneity, which is the primary focus of scRNA-seq analysis. 
+AGE across batches (**Figure 3A**). However, this method may prioritize 
+housekeeping genes, which are present in all cell types 
+and thus their AGE is not determined by cell type 
+proportions (**Figure 3B**). Unfortunately, housekeeping genes typically 
+do not capture cell 
+heterogeneity, defeating the primary focus of scRNA-seq analysis. 
 
 ![Desktop View](ambient_variation.jpg){: width="380" alt="Reducing ambient gene expression biases in cell representation by removing genes with the highest ambient expression differences across batches." .shadow style="border-radius: 7px;"}
-_<b>Figure 3: Reducing ambient gene expression biases in cell representation by removing genes with the highest ambient expression differences across batches </b>(<b>A</b>). The limitation (<b>B</b>) of this approach is that it will likely prioritize genes constantly expressed across all cells and subsequently batches (e.g. housekeeping genes). This can lead to the loss of information on biological variation._
+_<b>Figure 3: Reducing ambient gene expression biases in cell representation by removing genes with the highest ambient expression differences across batches </b>(<b>A</b>). The limitation of this approach is that it will likely prioritize genes constantly expressed across all cells and subsequently batches (e.g. housekeeping genes). This can lead to the loss of information on biological variation (<b>B</b>)._
 
 <details closed>
 <summary><u>Note on removing AGE genes</u></summary>
@@ -258,8 +261,8 @@ approach for multiple reasons:
 <li>As noted earlier, the performance was comparable to that of established 
 tools. Therefore, it seemed unnecessary to use more complex methods, 
 whose limitations might also be harder to understand.</li> 
-<li>Established methods require parameter tuning (Janssen, 2023). 
-However, the computational cost of filtering ambient genes based on a 
+<li>Methods for AGE correction require parameter tuning (Janssen, 2023). 
+The computational cost of filtering ambient genes based on a 
 ranked list is lower than running correction tools multiple times. 
 Ultimately, testing just two or three different numbers of blacklisted 
 ambient genes sufficed for me.</li> 
@@ -298,7 +301,7 @@ such as identification of disease targets (i.e. genes changed in disease that
 could be targeted by therapy) and comparison of drug effects across 
 populations (e.g. between males and females). However, each replicate 
 typically originates from a different sequencing batch, resulting in unique 
-AGE profiles for each batch. 
+AGE profile in each replicate. 
 
 If AGE profiles contain group-specific biases, meaning they are more similar 
 within than between replicate groups, this can lead to false positive genes in 
@@ -335,7 +338,7 @@ substantial technical variation, such as across datasets from different
 laboratories.
 
 ![Desktop View](estimated_contamination.jpg){: width="400" alt="Estimates of ambient gene expression contamination often deviate from the actual levels and have different accuracy across batches." .shadow style="border-radius: 7px;"}
-_<b>Figure 5: Estimates of AGE contamination often deviate from the actual levels, being either too low or too high, and have different accuracy across batches.</b> Comparison of estimated AGE fraction obtained with different correction methods and the ground truth (genotype estimate). Different batches are shown on the x-axis, with boxplots showing the distribution of estimates across cells per batch. Batches originate from two different sequencing technologies, labeled as "rep" and "nuc". The plot was taken from Figure 5a of (Janssen, 2023), which is under CC BY 4.0 license._
+_<b>Figure 5: Estimates of AGE contamination often deviate from the actual levels and have different accuracy across batches.</b> Comparison of estimated AGE fraction obtained with different correction methods and the ground truth (genotype estimate). Different batches are shown on the x-axis, with boxplots showing the distribution of estimates across cells per batch. Batches originate from two different sequencing technologies, labeled as "rep" and "nuc". The plot was taken from Figure 5a of (Janssen, 2023), which is under CC BY 4.0 license._
 
 As long as AGE correction differs across batches, I would not consider it 
 sufficiently reliable for facilitating DE analysis across multiple batches. 
@@ -385,7 +388,7 @@ be tailored to the specific use case.
 scaling procedure will affect the outcome. For example, if only a small 
 cluster of cells is endogenously expressing the gene, and the clustering 
 resolution used for cell type annotation is too coarse, the final endogenous 
-expression estimate will be too low (**Figure 6B**). Thus, I performed the 
+expression estimate will be underestimated (**Figure 6B**). Thus, I performed the 
 calculations using a very high clustering resolution. 
 - This approach does not evaluate whether the direction of AGE-driven DE 
 aligns with that of the target cell type. An alternative method to address 
@@ -394,7 +397,7 @@ this is discussed in the next section.
 ### Excluding genes whose DE can be explained by ambient DE
 
 To assess whether DE results within a cell type are driven by AGE, 
-they could be compared to ambient DE observed in empty droplets 
+they can be compared to ambient DE from empty droplets 
 (Amezquita, 2021). While the comparison could be done _post hoc_ on the DE 
 results of both droplet types individually, a more statistically sound 
 approach would incorporate the ambient levels directly within the DE design. 
@@ -422,7 +425,7 @@ not having a significant contribution.
 _<b>Figure 7: Assessing if differential expression is driven by the condition of interest or ambient gene expression effects using a likelihood ratio test.</b> G1, G2 - condition groups._
 
 However, this approach again has some limitations:
-- Gene-specific factors (i.e. AGE levels) are not easily used with common DE 
+- Custom gene-specific factors (i.e. AGE levels) are not easily used with common DE 
 tools, such as edgeR and DESeq2. Namely, they need to be incorporated in 
 the offset matrix. However, this matrix must also account for other effects, 
 such as the number of reads sequenced for each droplet (i.e. library size) 
@@ -443,7 +446,8 @@ results.
 Different data use cases call for different AGE mitigation approaches. 
 Since most existing tools are primarily designed for within-batch 
 applications, and current workarounds are often suboptimal, it would be 
-great to have a tool designed specifically for AGE-bias removal in DE analysis.
+great to have a tool designed specifically for removing AGE-biases in 
+cross-batch DE analysis.
 
 ## Acknowledgements
 
@@ -472,4 +476,4 @@ droplet-based single-cell RNA sequencing data. GigaScience (2020).
 
 [^footnote1]: As the information captured by individual genes is redundant, cell representations are commonly computed on a subset of genes. Thus, genes that may contribute less to cross-batch differences can be prioritized. 
 
-[^footnote2]: To be precise, AGE should be incorporated as an offset variable rather than a normal predictor variable. However, explaining this is beyond the scope of this post. See [this discussion](https://stats.stackexchange.com/questions/175349/in-a-poisson-model-what-is-the-difference-between-using-time-as-a-covariate-or) for more information.
+[^footnote2]: To be precise, AGE should be incorporated as an offset variable rather than a normal predictor variable. However, explaining this is beyond the scope of this post. See <a href="https://stats.stackexchange.com/questions/175349/in-a-poisson-model-what-is-the-difference-between-using-time-as-a-covariate-or" target="_blank">this discussion</a> for more information.

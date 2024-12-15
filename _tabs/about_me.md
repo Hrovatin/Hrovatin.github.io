@@ -4,10 +4,7 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-For my up-to-date CV please refer to 
-[LinkedIn](https://www.linkedin.com/in/karin-hrovatin-3817a6150/).
-
-## Biomedical data science
+## Biological data science
 
 My professional interests broadly revolve around **research** in 
 **biological data sciences**. 
@@ -16,34 +13,25 @@ This includes both **understanding the data** at hand
 and **keeping track of machine learning** developments that may be beneficial 
 for analyzing the data.
 
-### Data visualization
+## Data visualization
 
-One of my professional (and also private) "hobbies" is visual communication 
-of scientific **data and concepts**. 
+One of my professional (and also private) hobbies is visual communication 
+of scientific **data and concepts**.
 
-Among my favourite work-sessions during my PhD
-was the chance to describe my battles with `matplotlib` and how I survived them
-in this 
-[tutorial](https://scanpy.readthedocs.io/en/stable/tutorials/plotting/advanced.html).
-Since I had written the first draft, others have also improved this tutorial. 
-
-
-Besides that, figuring out with my colleagues
-how to make concept figures that save the reader 
-time of actually reading the paper was always lots of fun.
-
-Last but not least, visualising the data is in my opinion key for understanding it, 
-so it remains an integral part of my every-day work.
+Besides making research more approachable, visualizations are also key 
+for understanding the data, representing an integral part of my every-day work.
 
 ## Other interests
 
-I am also interested in **entrepreneurship**. However, I decided to 
-first probe the industry world by joining an already established company.
+I am interested in **entrepreneurship**. However, I decided to 
+first probe the industry world by joining a well-established company.
 
 And of course: I enjoy participating in **scientific communication**. - 
-As you may have deduced from the existence of this blog. 
-However, my interest is broader than just this blog, although I never have
-enough time to do everything. For example, 
-I must admit that I am one of those *special* people
-who actually *enjoys* presenting their work to others.
+As you may have figured out from this blog. 
+However, my interest is broader than this blog. Yet, there is never
+enough time to do everything.
 
+## CV
+
+For my up-to-date CV please refer to 
+[LinkedIn](https://www.linkedin.com/in/karin-hrovatin-3817a6150/).

@@ -27,30 +27,33 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-As computational researchers, we publish our code alongside manuscripts to 
-ensure reproducibility. However, most of this code was not designed to be 
-reused in other contexts. Consequently, our new method will be less accessible 
-to others, resulting in a lower impact. Thus, the question is: How to achieve 
+In computational research, it is a standard to publish code alongside 
+manuscripts for reproducibility. However, most of that code is not designed to 
+be reused for other applications. Consequently, new methods are less accessible 
+to the community, resulting in a lower impact. Thus, the question is: How to achieve 
 long-term reusability with minimal effort? The simple answer: You can’t. - 
 There is no easy open-source recipe. Nevertheless, we can avoid the most 
-common pitfalls by learning from past experiences.
+common pitfalls by learning from experience of others.
 
 For this blog post, I spoke with 
-[Lukas Heumos](https://bsky.app/profile/lukasheumos.bsky.social) and 
-[Adrian Šošić](https://www.linkedin.com/in/adriansosic/). Both are 
+<a href="https://bsky.app/profile/lukasheumos.bsky.social" target="_blank">Lukas Heumos</a>
+and 
+<a href="https://www.linkedin.com/in/adriansosic/" target="_blank">Adrian Šošić</a>. 
+Both are 
 open-source Python developers but come from different backgrounds - academia 
 and industry. Despite that, our discussion revealed that they face similar 
 hurdles.
 
-Lukas is a software developer and bioinformatics scientist who contributed to 
+Lukas is software developer and bioinformatics scientist who contributed to 
 numerous open-source projects. He is best known for his pioneering role in 
-[scverse](https://scverse.org/) - 
+<a href="https://scverse.org/" target="_blank">scverse</a> - 
 a consortium of foundational tools for analyzing single-cell data. 
 The scverse community has developed more than 50 high-quality packages 
 with over 50 contributors.
 
-Adrian is a data scientist and software developer with industry experience. 
-He is a core developer of the [BayBE](https://emdgroup.github.io/baybe/stable/) 
+Adrian is data scientist and software developer with industry experience. 
+He is a core developer of the 
+<a href="https://emdgroup.github.io/baybe/stable/" target="_blank">BayBE</a>
 package, designed for Bayesian optimization of chemical experiments. 
 Originally developed at Merck KGaA Darmstadt, the package has been 
 open-sourced and has since gained widespread popularity both within 
@@ -58,7 +61,7 @@ the company and in the broader community.
 
 *With Lukas and Adrian we talked about anecdotes. This is reflected in the 
 blog post, which does not aim to present a comprehensive guide for any of 
-the discussed topics. Furthermore, given that all three of us primarily work 
+the discussed topics. Also, given that all three of us primarily code 
 in Python, many examples are Python-based. Nevertheless, the open-source 
 principles we discussed are applicable across different programming languages.*
 
@@ -68,7 +71,19 @@ However, for the sake of readability, I often omit their names.*
 <details closed>
 <summary><u>Sections list</u></summary>
 <div style="border:1px solid #535353;border-radius: 7px;padding: 10px;margin: 5px;">
-
+<ul>
+<li>Following the trail of best practices</li>
+<li>The crossroads at which you should not take the wrong path</li>
+<ul>
+<li>Code standards</li>
+<li>GitHub history</li>
+<li>Taming dependencies</li>
+<li>Keeping code running consistently</li>
+<li>Keeping code running correctly</li>
+</ul>
+<li>Good contributions are never one-sided</li>
+<li>From coding to community</li>
+</ul>
 </div>
 </details>
 
@@ -76,11 +91,11 @@ However, for the sake of readability, I often omit their names.*
 
 If you're looking for an easy recipe for setting up Python packages, 
 here's mine: First, find the latest repository from Lukas. Second, 
-copy over all his packaging code. This prompts the question: How does 
+copy over all his packaging code and use it. This prompts the question: How does 
 Lukas stay updated on current best practices?
 
 A good starting point is to follow widely accepted standards, such as 
-[PEPs (Python Enhancement Proposals)](https://peps.python.org/pep-0000/#). 
+<a href="https://peps.python.org/pep-0000/#" target="_blank">PEPs (Python Enhancement Proposals)</a>.
 PEPs outline Python design guidelines and new features. Although the 
 extensive PEP index may not seem like an inviting weekend read, a 
 closer look reveals hidden gems amid the technical specifications 
@@ -92,13 +107,13 @@ _<b>Figure 1: PEP 20, also known as “The Zen of Python”.</b> If you ever wan
 Besides following PEPs, useful standards can also be found within the 
 community. In search of *unwritten* upcoming practices, Lukas regularly 
 flips through GitHub pages of bigger tech companies and open-source 
-initiatives. He follows developers’ posts and Reddit communities[^footnote1] 
+initiatives. He also follows developers’ posts and Reddit communities[^footnote1] 
 (**Figure 2**). 
 
 ![Desktop View](reddit_best_practices.jpg){: width="800" alt="Emerging programming (Python) best practices can be discovered by following community (Reddit) discussions." .shadow style="border-radius: 7px;"}
 _<b>Figure 2: Emerging best practices can be discovered from community discussions.</b> This example shows how `uv` gained popularity among Python developers on Reddit. The figure is composed of screenshots taken on 24. 11. 2024. Some of the posts were cut for brevity._
 
-Last but not least, exchanges with colleagues should not be overlooked. 
+Last but not least, exchange with colleagues should not be overlooked. 
 Although I had previously worked with both Adrian and Lukas, I was surprised 
 by how many new insights came up during the interview.
 
@@ -109,7 +124,7 @@ your specific package.
 ## The crossroads at which you should not take the wrong path
 
 In conversations with Adrian and Lukas, a topic that surfaced over and 
-over again was limited time available to developers - the main constraint 
+over again was the limited time available to developers - the main constraint 
 on their projects. However, both underlined that time-saving should never 
 be short-term. Code changes should be made with a long-term focus, aiming 
 to streamline future package development. Or as PEP20 aptly states: 
@@ -131,9 +146,9 @@ the best thing to do (**Figure 3**).
 ![Desktop View](sheep_coding.jpg){: width="300" alt="Sheep coding." .shadow style="border-radius: 7px;"}
 _<b>Figure 3: Following existing standards rather than re-inventing new ones can save a lot of time for coding.</b>_
 
-A clear standard can be set by using an automated pre-commit formatting tool. 
-Besides saving developers’ time from unfruitful discussions, this also 
-ensures that no poorly formatted code can be pushed to GitHub.
+A clear standard can be set by using automated pre-commit formatting tools, 
+called linters. Besides saving developers’ time from unfruitful discussions, 
+they also ensures that no poorly formatted code can be pushed to GitHub.
 
 ### GitHub history
 
@@ -152,11 +167,11 @@ not help us pinpoint the bugs.
 <div style="border:1px solid #535353;border-radius: 7px;padding: 10px;margin: 5px;">
 Imagine that our package all of a sudden fails to build because one of the 
 dependencies changed its dependencies, making it incompatible with our 
-dependency pins. If the dependency file lacks an explanation about the 
-pin - which ideally it should not -  the only way to find out why it was 
+dependency pins. If our dependency file lacks an explanation about the 
+pin - which ideally it should not -  the only way to find out why the pin was 
 introduced is by using the history. In case the pin was introduced in a 
 bloated commit with the message “more changes” this does not bring us any 
-further. We need to manually investigate what may break if we amend the pin.
+further. - We will need to manually investigate what may break if we amend the pin.
 </div>
 </details>
 <br>
@@ -168,7 +183,7 @@ To effectively manage code modifications, three rules are of special importance:
 - Individual pull requests and commits should be as concise as possible. 
 Ideally, one pull request should address no more than one bug or one new 
 feature.
-- While *diffs* reveal *how* the code has changed, our descriptions should 
+- While `diff` reveals *how* the code has changed, our descriptions should 
 concisely convey *which functionality* has been modified and *why* the 
 change was necessary (**Figure 5**).
 - Commits should be easily searchable. Thus, they must be free of spelling 
@@ -193,7 +208,8 @@ includes publishing a private repository that may contain sensitive
 information. The quickest solution is copying all non-sensitive files to a 
 new repository and starting from scratch. However, this will result in a 
 complete loss of history, hindering future developments. Not only will we 
-no longer be able to use tools like <code>git bisect</code>, but also the authorship 
+no longer be able to use tools like 
+<code class="highlighter-rouge">git bisect</code>, but also the authorship 
 information will be lost, preventing us from reaching out to the original 
 code-block author for clarification.
 </div>
@@ -205,7 +221,7 @@ code-block author for clarification.
 Managing dependencies was flagged as a hurdle by both Adrian and Lukas. 
 When developing a package, it's crucial to consider how easily users will 
 be able to integrate it into their own code. This differs from writing 
-non-packaged code, such as for individual analyses or self-contained 
+other types of code, such as for individual analyses or self-contained 
 applications. In these, dependencies can be simply pinned, bypassing 
 many of the considerations necessary for creating a *lean* package.
 
@@ -225,8 +241,7 @@ instead of one, reduce the number of code iterations that can be completed
 within a limited time frame.
 - A large number of dependencies makes a package harder to maintain over 
 time. This includes dealing with incompatibilities among dependencies and 
-handling changes in the programming interfaces of dependencies used within 
-our package.
+handling changes in the programming interfaces of the used dependencies.
 
 Multiple strategies to mitigate the above challenges exist:
 - Packages may be added as optional dependency groups for specific 
@@ -248,12 +263,14 @@ be needed.
 <details closed>
 <summary><u>Example on lazy-loading</u></summary>
 <div style="border:1px solid #535353;border-radius: 7px;padding: 10px;margin: 5px;">
-In BayBE the PyTorch package was one of the bottlenecks for import, 
+In BayBE, the PyTorch package was one of the bottlenecks for import, 
 although it was not needed for all BayBE use cases. At the start, 
 lazy loading was not useful as all internal data representations were 
-stored as <code>torch.Tensor</code> objects, broadly requiring PyTorch 
-imports. Thus, they re-designed the data storage with <code>numpy</code> 
-and <code>pandas</code>, retaining PyTorch imports only where it was 
+stored as <code  class="highlighter-rouge">torch.Tensor</code> 
+objects, broadly requiring PyTorch 
+imports. Thus, they re-designed the data storage with 
+<code class="highlighter-rouge">numpy</code> 
+and <code class="highlighter-rouge">pandas</code>, retaining PyTorch imports only where it was 
 strictly needed for computation. For many use cases, this has importantly 
 sped up package loading.
 </div>
@@ -286,13 +303,16 @@ modifications, *locking one into* suboptimal design choices.
 Let's imagine we are developing a benchmarking class for measuring model 
 performance. To compute the relative performance of different models 
 one also needs to store the best possible performance. However, 
-the <code>Benchmark</code> class may not be the best place to store this 
+the <code class="highlighter-rouge">Benchmark</code> 
+class may not be the best place to store this 
 information. In the future, one may also want to perform benchmarks on 
 combinations of multiple datasets. This naturally calls for a 
-<code>Dataset</code> class, which stores all relevant dataset attributes, 
+<code  class="highlighter-rouge">Dataset</code> class, 
+which stores all relevant dataset attributes, 
 including the maximal performance for that dataset. Multiple datasets with 
 different properties can then be added to a benchmark. However, we started 
-with a <code>Benchmark</code> class interface containing a parameter for a 
+with a <code class="highlighter-rouge">Benchmark</code> 
+class interface containing a parameter for a 
 maximal performance value. This parameter can not be simply removed, as 
 this would break the code of users relying on it. Now, we are stuck with 
 a “dead” parameter that will remain unused in new use cases. 
@@ -332,7 +352,7 @@ collection of strings to a function. Or as Douglas Adams would put it:
 completely foolproof is to underestimate the ingenuity of complete fools.”*
 
 To prevent the above-mentioned user error, one could employ the `attrs` 
-or `pydantic` packages. They improve class initialization, including type 
+or `pydantic` packages. They enhance class initialization, including type 
 checking and automatic type conversions.
 
 Another common user mistake is overlooking that an object will be modified 
@@ -350,10 +370,10 @@ recently popularised package is `hypothesis`. It identifies edge-case
 errors, such as passing zero or infinite `float` values. This is achieved 
 by automatically generating test cases with diverse inputs (**Figure 6**). 
 Afterward, `hypothesis` aids in debugging by pinpointing the simplest input 
-scenario that leads to the error.
+scenario that results in an error.
 
 ![Desktop View](hypothesis.jpg){: width="700" alt="Hypothesis helps to identify hidden bugs by expanding test parametrization." .shadow style="border-radius: 7px;"}
-_<b>Figure 6: Hypothesis helps to identify hidden bugs by expanding test parametrization.</b> Some parameter values may be overlooked by a programmer (left) but not by Hypothesis (right). This is a mock example representing the key aim of Hypothesis and not a real code snippet. For using Hypothesis please refer to the [official documentation](https://hypothesis.readthedocs.io/en/latest/quickstart.html)._
+_<b>Figure 6: Hypothesis helps to identify hidden bugs by expanding test parametrization.</b> Some parameter values may be overlooked by a programmer (left) but not by Hypothesis (right). This is a mock example representing the key aim of Hypothesis and not a real code snippet. For using Hypothesis please refer to the <a href="https://hypothesis.readthedocs.io/en/latest/quickstart.html" target="_blank">official documentation</a>._
 
 Besides unit tests, which test individual functionalities and should be 
 run upon making any code modifications, there are also integration tests. 
@@ -374,7 +394,7 @@ emoji Unicodes that get consistently rendered into emojis on the user
 side (**Figure 7**).
 
 ![Desktop View](emoji_messages.jpg){: width="800" alt="Terminal output messages with emojis to improve readability." .shadow style="border-radius: 7px;"}
-_<b>Figure 7: Terminal messages with emojis for improved readability.</b> Taken from [Lamin’s tutorial](https://docs.lamin.ai/curate-df) on `DataFrame` curation._
+_<b>Figure 7: Terminal messages with emojis for improved readability.</b> Taken from <a href="https://docs.lamin.ai/curate-df" target="_blank">Lamin’s tutorial</a> on `DataFrame` curation._
 
 ## Good contributions are never one-sided
 
@@ -408,7 +428,8 @@ current form, they are not a particularly useful tool.
 </details>
 <br>
 
-Above, I discussed the importance of keeping pull requests short from the 
+In a former section, I discussed the importance of keeping pull 
+requests short from the 
 perspective of modification history. However, this also makes the review 
 process more manageable:
 - It will help to converge on a solution, easing the review process for 
@@ -422,7 +443,7 @@ may strongly deviate from the package’s core principles, potentially making
 them unusable. There are several ways in which a contributor guide can be 
 improved:  
 - Striking the right balance between brevity and accessibility can be 
-challenging when considering users with diverse backgrounds. Linking to 
+challenging when considering contributors with diverse backgrounds. Referring to 
 external guides, such as how to use GitHub, can help to reduce the length 
 and keep the information on external resources up to date. 
 - A high-level class diagram can clarify the general package architecture 
@@ -437,29 +458,29 @@ basing their enhancements on features that will be altered in the near future.
 ## From coding to community
 
 When Lukas was asked about his favorite open-source project, his answer 
-was clear: scverse. He appreciated the recognition of their efforts and 
+was clear: scverse. He enjoyed the recognition of their efforts and 
 valued being part of the community. The project allowed him to gain a 
 diverse set of skills and to benefit from the knowledge shared by other 
 collaborators.
 
-Managing larger open-source initiatives involves responsibilities beyond 
+Organizing larger open-source initiatives involves responsibilities beyond 
 coding, such as managing people. While code contributions can come from 
 anywhere in the world, both Lukas and Adrian highlighted that working 
 across different organizations and locations presents additional challenges. 
 It can limit exchange and even create disconnected local hubs. 
 
-As a manager of an open-source initiative, it is key to pave ways for 
+As a manager of an open-source initiative, it is key to pave the way for 
 information flow. The first step is coordinating shared meeting times. 
 Additionally, the value of in-person meetings should not be underestimated. 
-Lukas mentioned that the scverse conference was not only appreciated by the 
-wider community but also boosted the motivation of the core members.
+Lukas emphasized that the scverse conference was not only appreciated by the 
+wider community but also boosted the motivation of the core developers.
 
 Besides immediate community management, it is also important to plan for 
 the future. Regular discussions about career progression and realistic 
 time commitments are key. Without them, new members may not be ready to 
 step up when experienced veterans move on.
 
-While the above provided some glimpses into managing open-source communities, 
+While this section provided some glimpses into managing open-source communities, 
 the topic is far too broad to be fully covered in this post. Even so, it 
 should never be overlooked when planning long-lasting open-source projects.
 

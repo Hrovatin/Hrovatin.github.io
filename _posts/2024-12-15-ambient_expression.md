@@ -118,7 +118,7 @@ _**Figure 1: Properties of ambient gene expression.**_
 
 Summary of AGE characteristics:
 - **Data of each cell can be, in theory, decomposed into endogenous (true) 
-and exogenous (ambient artifact) components.** 
+and exogenous (ambient artifact) components[^footnote1].** 
   - Cause of AGE: Besides the cell and its endogenous transcripts, 
   each droplet will also contain some of the liquid in which cells are 
   dispersed during sample preparation. As some of the cells burst during 
@@ -234,7 +234,7 @@ integration becomes easier.
 In this setting, I observed that removing the major ambient effects can 
 already lead to relatively strong improvement. For example, simply excluding 
 the genes with the highest AGE from the features used to compute the 
-integrated representation[^footnote1] can achieve performance comparable to 
+integrated representation[^footnote2] can achieve performance comparable to 
 that of dedicated AGE correction tools (Hrovatin, 2023). However, it is 
 important to note that if no further integration methods are applied and 
 the representation is computed directly from the AGE-corrected data, a 
@@ -415,7 +415,7 @@ To assess AGE-bias in DE, the following GLM-LRT design could be used
 - The outcome variable is the expression of a gene.
 - The predictor variable of interest is the biological condition. 
 This covariate is omitted from the baseline model.
-- The baseline predictor variable is the AGE of the gene[^footnote2]. 
+- The baseline predictor variable is the AGE of the gene[^footnote3]. 
 
 If the GLM model with added biological condition information does not improve 
 upon the model that contains only the AGE factor, this suggests that variation 
@@ -472,9 +472,13 @@ analysis of single-cell expression data. Genome Biol (2023).
 DecontX. Genome Biol (2020).
 - Young, M. D., et al. SoupX removes ambient RNA contamination from 
 droplet-based single-cell RNA sequencing data. GigaScience (2020).
+- Martin, B.K., et al. Optimized single-nucleus transcriptional profiling by 
+combinatorial indexing. Nat Protoc (2023).
 
 ## Footnotes
 
-[^footnote1]: As the information captured by individual genes is redundant, cell representations are commonly computed on a subset of genes. Thus, genes that may contribute less to cross-batch differences can be prioritized. 
+[^footnote1]: As noted by Maren Büttner, ambient artifacts appear only in certain single-cell sequencing protocols, such as currently popular droplet-based technologies. However, use of other methods may in the future make ambient artifacts obsolete. An emerging example is sci-RNA-seq (Martin, 2022), which distinguishes individual cells based on multiple rounds of mixing small cell populations within wells and uniquely tagging them. Subsequently, all transcripts from a cell have a unique tag combination. The free-floating transcripts are not captured alongside individual cells but rather "mixed away”, thus they do not share tags with individual cells.
 
-[^footnote2]: To be precise, AGE should be incorporated as an offset variable rather than a normal predictor variable. However, explaining this is beyond the scope of this post. See <a href="https://stats.stackexchange.com/questions/175349/in-a-poisson-model-what-is-the-difference-between-using-time-as-a-covariate-or" target="_blank">this discussion</a> for more information.
+[^footnote2]: As the information captured by individual genes is redundant, cell representations are commonly computed on a subset of genes. Thus, genes that may contribute less to cross-batch differences can be prioritized. 
+
+[^footnote3]: To be precise, AGE should be incorporated as an offset variable rather than a normal predictor variable. However, explaining this is beyond the scope of this post. See <a href="https://stats.stackexchange.com/questions/175349/in-a-poisson-model-what-is-the-difference-between-using-time-as-a-covariate-or" target="_blank">this discussion</a> for more information.

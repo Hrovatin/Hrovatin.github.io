@@ -11,21 +11,7 @@ image:
   alt: <b>A fight against ambient expression.</b><br>On a stormy sea "of ambient gene expression" a scientist is bailing out water (ambient expression) from his sinking boat (sequencing droplet containing a cell).
 ---
 
-<button id="toggleDetails" style="border-radius: 7px; box-shadow: none; padding: 10px;">Expand/Collapse details</button>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var detailsElements = document.querySelectorAll("details");
-    var toggleButton = document.getElementById("toggleDetails");
-
-    toggleButton.addEventListener("click", function() {
-        var allOpen = Array.from(detailsElements).every(details => details.open);
-        detailsElements.forEach(function(details) {
-            details.open = !allOpen;
-        });
-    });
-});
-</script>
+{% include toggle-details.html %}
 
 In this blog post, I will discuss the limitations of commonly used methods 
 for correcting a technical artifact known as ambient gene expression (AGE). 

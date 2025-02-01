@@ -1,0 +1,72 @@
+<style>
+.toggle_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin-left: 15px;
+}
+
+.toggle_switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+  border: 1px solid #999;
+}
+
+.toggle_slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle_slider {
+  background-color: var(--toc-highlight);
+}
+
+input:checked + .toggle_slider:before {
+  transform: translateX(26px);
+}
+</style>
+
+<div style="margin-bottom: 20px;">
+<span style="font-size: 0.9em; color: var(--text-muted-color);">
+  Expand all detail boxes for printing
+</span>
+<label class="toggle_switch">
+<input type="checkbox" id="toggleDetails">
+<span class="toggle_slider"></span>
+</label>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var detailsElements = document.querySelectorAll("details");
+    var toggleSwitch = document.getElementById("toggleDetails");
+
+    toggleSwitch.addEventListener("change", function() {
+        var isChecked = toggleSwitch.checked;
+        detailsElements.forEach(function(details) {
+            details.open = isChecked;
+        });
+    });
+  });
+</script>

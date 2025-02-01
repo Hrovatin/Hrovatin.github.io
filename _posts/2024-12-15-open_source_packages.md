@@ -12,21 +12,7 @@ image:
 
 ---
 
-<button id="toggleDetails" style="border-radius: 7px; box-shadow: none; padding: 10px;">Expand/Collapse details</button>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var detailsElements = document.querySelectorAll("details");
-    var toggleButton = document.getElementById("toggleDetails");
-
-    toggleButton.addEventListener("click", function() {
-        var allOpen = Array.from(detailsElements).every(details => details.open);
-        detailsElements.forEach(function(details) {
-            details.open = !allOpen;
-        });
-    });
-});
-</script>
+{% include toggle-details.html %}
 
 In computational research, it is a standard to publish code alongside 
 manuscripts for reproducibility. However, most of that code is not designed to 

@@ -472,7 +472,7 @@ analysis of single-cell expression data. Genome Biol (2023).
 DecontX. Genome Biol (2020).
 - Young, M. D., et al. SoupX removes ambient RNA contamination from 
 droplet-based single-cell RNA sequencing data. GigaScience (2020).
-- Martin, B.K., et al. Optimized single-nucleus transcriptional profiling by 
+- Martin, B. K., et al. Optimized single-nucleus transcriptional profiling by 
 combinatorial indexing. Nat Protoc (2023).
 
 ## Footnotes

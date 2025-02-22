@@ -60,7 +60,7 @@ messages there.
 
 ## Acknowledgements
 
-I am grateful to past support from Joachim Herz Stiftung via 
+I am grateful for past support from Joachim Herz Stiftung via 
 Add-on Fellowships for Interdisciplinary Life Science that sponsored some 
 of my illustration tools.
 

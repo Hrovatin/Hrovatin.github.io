@@ -8,7 +8,7 @@ description: Building models through a magnifying glass.
 media_subpath: /assets/img/2025-06-08-interactive_segmentation/
 image:
   path: eye.jpg
-  alt: <b>Visual inspection is key for developing interactive segmentation models.</b>
+  alt: <b>Visual inspection is key for developing high-quality (interactive segmentation) models.</b>
 
 ---
 
@@ -29,7 +29,7 @@ Their main piece of advice was: carefully choose individual methodological compo
 </p>
 
 <p>
-Hallee developed ScribblePrompt (Wong, 2024a), an interactive segmentation tool for 2D medical images. Max and Fabian are authors of nnInteractive (Isensee, Rokuss, and Krämer, 2025), an interactive segmentation tool for 3D medical images. Both works focused on providing a robust and user-centric tool.
+Hallee developed ScribblePrompt (Wong, 2024a), an interactive segmentation method for 2D medical images. Max and Fabian are authors of nnInteractive (Isensee, Rokuss, and Krämer, 2025), an interactive segmentation method for 3D medical images. Both works focused on providing a robust and user-centric tool.
 </p>
 
 <p>

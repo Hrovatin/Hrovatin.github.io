@@ -8,7 +8,7 @@ description: Models that fit like water in a vessel.
 media_subpath: /assets/img/2025-02-22-sc_flow_matching/
 image:
   path: matching_flows_to_cells.jpeg
-  alt: <b>Single-cell flow matching.</b><br>A visual metaphor of the flow matching generative process, illustrated as water currents transforming input noise into structured single-cell data.
+  alt: <b>Single-cell flow matching.</b><br>The flow matching generative process transforms input noise into structured single-cell data.
 
 ---
 

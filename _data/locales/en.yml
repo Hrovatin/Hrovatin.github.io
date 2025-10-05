@@ -16,7 +16,9 @@ tabs:
   tags: Post tags
   # archives: Post archives
   about_me: About me
+  insights: Data Sci. updates
   license: License
+
 
 # the text displayed in the search bar & search results
 search:

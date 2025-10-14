@@ -355,7 +355,7 @@ Data augmentation is another important step for increasing diversity. For exampl
 </details>
 <p></p>
 
-## Conclusion
+## Key takeaways
 
 Model building is best seen as an interactive engineering endeavour. - It calls for a deep understanding and careful optimization of individual components, going far beyond simply running grid searches over different architectures. 
 

@@ -8,7 +8,7 @@ description: Solving the puzzle of applied machine learning.
 media_subpath: /assets/img/2026-03-21-scalable_genomics/
 image:
   path: puzzle.png
-  alt: <b>The puzzle of how machine learning can answer genomics problems is not yet fully solved.</b><br><i>This image is AI generated.</i>
+  alt: <b>The puzzle of how machine learning can answer genomics questions is not yet fully solved.</b><br><i>This image is AI generated.</i>
 math: true
 ---
 

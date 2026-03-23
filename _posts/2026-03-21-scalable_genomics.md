@@ -41,6 +41,34 @@ Yasha proposed a new protein sequence model for phylogeny reconstruction. It can
 
 *While this blog post is based on discussions with Boyang, Yasha, and Alan, I often omit their names for the sake of readability.*
 
+<details closed>
+<summary><u>Sections list</u></summary>
+<div style="border:1px solid #535353;border-radius: 7px;padding: 10px;margin: 5px;">
+<ul>
+ <li>A brief methodological introduction</li>
+<ul>
+<li> Detecting genetic-phenotype associations</li>
+<ul>
+<li> Increasing power with a prior based on genetic context</li>
+<li> Efficiently detecting epistasis</li>
+</ul>
+<li>Protein embeddings for phylogenetic tree reconstruction</li>
+</ul>
+<li>Is machine learning trustworthy enough?</li>
+<ul>
+<li>Blinded by SOTA</li>
+<li>Finding new data to improve performance</li>
+<li>Let the data speak</li>
+</ul>
+<li>Answering genomics questions with limited compute resources</li>
+<ul>
+<li>How flexible does the model need to be?</li>
+<li>Overcoming resource constraints</li>
+</ul>
+</ul>
+</div>
+</details>
+
 ## A brief methodological introduction
 
 The summaries below provide a quick and simplified[^footnote1] methodological background for the topics discussed in this post.

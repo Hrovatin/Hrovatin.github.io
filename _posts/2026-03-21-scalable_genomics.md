@@ -68,6 +68,7 @@ Yasha proposed a new protein sequence model for phylogeny reconstruction. It can
 </ul>
 </div>
 </details>
+<p></p>
 
 ## A brief methodological introduction
 
@@ -136,6 +137,7 @@ Yasha mentioned that they are currently actively investigating different Phyla e
 
 </div>
 </details>
+<p></p>
 
 ## Is machine learning trustworthy enough?
 
@@ -164,6 +166,7 @@ _<b>Figure 4: Confounding by population structure.</b> If the environment is cau
 
 </div>
 </details>
+<p></p>
 
 GWAS data is also often believed to be too small to reliably fit more flexible ML models. The number of samples is usually much smaller than the number of tested genetic associations. When used directly in ML models, this can lead to poor performance because the models are underdetermined. However, Alan showed that there is enough data for high-quality model fits. - The key was to use all of the available information, including the computationally-intensive LD structure (**Figure 5**).
 
@@ -186,6 +189,8 @@ With all this in mind, before introducing a new ML model, one should carefully e
 
 </div>
 </details>
+<p></p>
+<p></p>
 
 ### Going beyond the "default" methods
 
@@ -208,6 +213,8 @@ Despite the tree-based quartet loss being related to standard contrastive learni
 
 </div>
 </details>
+<p></p>
+<p></p>
 
 ![Desktop View](generalization_table.jpg){: width="350" alt="Protein property prediction may be better aligned with comparison rather than reconstruction pre-training objective." .shadow style="border-radius: 7px;"}
 _<b>Figure 7: Protein property prediction may be better aligned with comparison rather than reconstruction pre-training objective.</b> The performance in protein classification on a more distant test set drops more for models that rely on the MLM loss (ESM2 and Phyla-MLM) than for the model that uses only the comparison loss (Phyla). The table was adapted from Table 8 of Ektefaie and Shen (2025), which is under CC BY 4.0 license._
@@ -224,6 +231,8 @@ Moreover, the comparison objective produces protein-level representations that a
 
 </div>
 </details>
+<p></p>
+<p></p>
 
 ### Finding new data to improve performance
 
@@ -245,6 +254,7 @@ Boyang suspects that the testing power could be increased by better accounting f
 
 </div>
 </details>
+<p></p>
 
 Additional information sources also enable the study of biological questions that would otherwise go unexamined due to a lack of data. For example, in GWAS, rare variants are commonly disregarded because they are unlikely to yield significant hits, while at the same time reducing overall power due to the multiple-testing burden. However, when using genome-context-informed priors, phenotypic associations of rare variants become more likely to be discovered. Alan pointed out that for him, this is one of the most promising applications of the new prior. 
 
@@ -264,6 +274,7 @@ Additional information sources also enable the study of biological questions tha
 
 </div>
 </details>
+<p></p>
 
 ### Let the data speak
 

@@ -56,7 +56,7 @@ Yasha proposed a new protein sequence model for phylogeny reconstruction. It can
 </ul>
 <li>Is machine learning trustworthy enough?</li>
 <ul>
-<li>Blinded by SOTA</li>
+<li>Going beyond the "default" methods</li>
 <li>Finding new data to improve performance</li>
 <li>Let the data speak</li>
 </ul>
@@ -187,7 +187,7 @@ With all this in mind, before introducing a new ML model, one should carefully e
 </div>
 </details>
 
-### Blinded by SOTA
+### Going beyond the "default" methods
 
 Yasha speculated that the underperformance of ML methods may also be explained by how they are applied to genomics tasks. Most commonly, architectures are taken directly from other domains, such as language and image processing, and *forced* upon biological data. However, there is a lack of modeling approaches tailored to individual biological data types. He speculated that future architectural developments may open up new ML use cases in genomics.
 

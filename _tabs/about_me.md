@@ -4,22 +4,17 @@ icon: fas fa-info-circle
 order: 5
 ---
 
-## Biological data science
+## Making the most of ML for real-world data
 
-My professional interests broadly revolve around **research** in 
-**biological data science**. 
+I enjoy exploring how **models interact with the data** in order to 
+make them useful in practice.
 
-This includes both **understanding the data** at hand 
-and **keeping track of machine learning** developments that may be beneficial 
-for analyzing the data.
+To build more **useful models**, I believe a combination of different parts is needed:
+- Understanding of the data and the problem via exchange with domain experts and proactive data exploration.
+- Knowledge about how models work and critical thinking about what may go wrong.
+- Good metrics and benchmarks that measure what we actually care about.
 
-## Data visualization
-
-One of my professional (and also private) hobbies is visual communication 
-of scientific **data and concepts**.
-
-Besides making research more approachable, visualizations are also key 
-for understanding the data, representing an integral part of my every-day work.
+My favourite ML quote: *“All models are **wrong**, but some are **useful**”* 
 
 ## Other interests
 

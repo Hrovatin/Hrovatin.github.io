@@ -13,6 +13,7 @@ To build more **useful models**, I believe a combination of different parts is n
 - Understanding of the data and the problem via exchange with domain experts and proactive data exploration.
 - Knowledge about how models work and critical thinking about what may go wrong.
 - Good metrics and benchmarks that measure what we actually care about.
+- Easily (re)usable code base and data.
 
 My favourite ML quote: *“All models are **wrong**, but some are **useful**”* 
 

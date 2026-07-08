@@ -8,7 +8,7 @@ description: Good model performance is only one of many steps towards clinical t
 media_subpath: /assets/img/2026-07-07-clinical_trials/
 image:
   path: robot.jpg
-  alt: <b>Developing new approaches that are ultimately adopted in clinical trials can feel like a wrestling through the thicket.</b><br><i>This image is AI generated.</i>
+  alt: <b>The path of translating new machine learning models from development into clinical trial practice can feel like wrestling through the thicket.</b><br><i>This image is AI generated.</i>
 math: true
 ---
 
@@ -43,7 +43,7 @@ In our discussion we primarily focused on different aspects of data curation, wi
 Models for predicting drug effects are usually conditioned on patient metadata (e.g., sex, age, etc.). In contrast, Atlas Bio's model is designed such that drug-patient interactions do not need to be learned from small clinical datasets. Instead, their model learns general covariance patterns between human genes. - That is, the model is primarily pre-trained on diverse human datasets[^footnote2]. Specifically, during pre-training they mask the majority of the transcriptome and aim to reconstruct it from a few “observed” genes. At inference time, the effect of a drug on the transcriptome is predicted as effects that propagate from the drug's target genes (selected based on mechanism of action, MOA) to the rest of the transcriptome (**Figure 1**). To make this possible, they designed a model architecture that is sensitive to changes in a small number of genes rather than disregarding them as noise. 
 
 ![Desktop View](atlasbio_schematic.jpg){: width="470" alt="Schematic of Atlas Bio’s model." .shadow style="border-radius: 7px;"}
-_<b>Figure 1: Schematic of Atlas Bio’s model.</b> The model is analogous to image inpainting. If the sparse pixel input is perturbed (e.g., by adding a dog silhouette), the model will predict a slightly different illustration. - It understands that the dog will scare away the ducks, inpainting less of them on the perturbed image. Similarly, Atlas Bio’s model is trained to restore gene expression of all genes from a small subset of genes (bottom left). During the inference (bottom right), MOA is applied to the input subset of a new patient. As the restoration is based on a perturbed input, it becomes a prediction of treatment effects._
+_<b>Figure 1: Schematic of Atlas Bio’s model.</b> The model is analogous to image inpainting. If the sparse pixel input is perturbed (e.g., by adding a dog silhouette), the model will predict a slightly different illustration. - It understands that the dog will scare away the ducks, inpainting less of them on the perturbed image. Similarly, Atlas Bio’s model is trained to restore gene expression of all genes from a small subset of genes (bottom left). During the inference (bottom right), MOA is applied to the input subset of a new patient. As the restoration is based on a perturbed input, it becomes a prediction of treatment effects. The figure was adopted from Atlas Bio's materials with their permission._
 
 This metabolism-wide rather than covariate-based focus increases inference flexibility:
 - Any MOA can be applied to the target patient sample. Thus, the model can predict effects of arbitrary drugs (i.e., MOAs) on diverse diseases (i.e., the patient samples used as inference input).

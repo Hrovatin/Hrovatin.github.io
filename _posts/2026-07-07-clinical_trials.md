@@ -69,7 +69,7 @@ Better predictions of drug success would raise development throughput, but it is
 
 Looking at current trial practices, one may expect for clinical trial prediction to be most useful during trial planning. - That is, pharmaceutical companies could computationally screen drug performance across different diseases and patient populations before committing to a specific trial. For example, they could identify the patient population with the strongest effect or choose the indication that gives the best chance to be first to market. 
 
-However, Simon noted that current incentive structures make it less likely for clinical trial managers to do this. Often, clinical teams come in contact with external drug success prediction tools too late, with a lot of resources already having been devoted towards designing the trial. Thus, they are less inclined to review their plans based on advice from small startups that only recently entered the field. 
+However, Simon noted that current incentive structures make it less likely for clinical trial managers to do this. Often, clinical teams come in contact with external drug success prediction tools too late, with a lot of resources already having been devoted towards designing the trial. Thus, he observed that they are less inclined to review their plans based on advice from small startups that only recently entered the field. Nevertheless, pharmaceutical industry is, without a doubt, interested in better trial planing and companies like PhaseV are already helping trial sponsors (i.e., pharmaceutical companies) to improve their trial design.
 
 Raul noted that researchers inside companies face similar issues. Clinical trials are heavily regulated, so changing a trial midstream - after the plan has been approved - is difficult[^footnote5]. 
 
@@ -84,7 +84,7 @@ Raul also explained that supporting a trial at the planning phase could potentia
 <summary><u>Why is computational clinical trial modeling not a more popular research topic?</u></summary>
 <div style="border:1px solid #535353;border-radius: 7px;padding: 10px;margin: 5px;">
 
-Data scarcity often gets the blame, but there are deeper reasons the trial space has not caught on with the ML community. Simon suggested long timescales are a key limitation - researchers prefer quick tests over waiting years for trial results. On top of that, Raul noted that it is harder to publish research results related to clinical trials because the publishing of associated information is under strict supervision. Trial sponsors (i.e., pharmaceutical companies) must namely ensure that shared information meets ethical standards and does not spread misinformation about the therapy, which could confuse stakeholders (e.g., doctors and patients).
+Data scarcity often gets the blame, but there are deeper reasons the trial space has not caught on with the ML community. Simon suggested long timescales are a key limitation - researchers prefer quick tests over waiting years for trial results. On top of that, Raul noted that it is harder to publish research results related to clinical trials because the publishing of associated information is under strict supervision. Trial sponsors must namely ensure that shared information meets ethical standards and does not spread misinformation about the therapy, which could confuse stakeholders (e.g., doctors and patients). Despite these barriers, a handful of companies have built modeling approaches designed to work within these constraints.
 
 </div>
 </details>
@@ -104,7 +104,7 @@ Moreover, patient data should not be evaluated only during trials. - Raul stress
 
 The number of new ML methods for clinical trials is growing fast. Raul remembers a pre‑AI era when many avenues were still unexplored; now it feels like no rock is left unturned.
 
-Even so, the ML method field is still far from having transformed clinical trials practice. The above described rigid clinical trial practices are by far not the only culprit. Rigid trial routines are not the only problem - development is often held back by scarce data and concerns about method reliability slow down adoption.
+However, developing methods that can truly transform clinical trial practice is not easy. The two challenges that were highlighted by everyone were data collection and ensuring method reliability.
 
 ### How to evaluate new methods?
 

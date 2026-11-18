@@ -41,7 +41,7 @@ please let me know so that I can adjust the content of future posts.
 ## Updates on new posts
 
 Since this blog is just a hobby of mine, 
-the posts will probably be published only every **two or three months**.
+the posts will probably be published only every **two to four months**.
 
 I will announce new posts on 
 [LinkedIn](https://www.linkedin.com/in/karin-hrovatin-3817a6150/) 
